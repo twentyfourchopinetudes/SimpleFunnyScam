@@ -7,9 +7,11 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        background-color: black;
       }
-
-      /* Style the top and bottom fixed divs */
+      body {
+        background-color: black;
+      }
       .fixed-top, .fixed-bottom {
         position: fixed;
         width: 100%;
@@ -18,57 +20,69 @@
         color: rgb(2, 1, 1);
         font-size: 2rem;
         font-weight: bold;
-        display: flex; /* Add display flex */
-        align-items: center; /* Add align items center */
+        display: flex; 
+        align-items: center; 
         justify-content: center;
       }
-
-      /* Give the top div a blue background */
       .fixed-top {
         background-color: blue;
         top: 0;
       }
-
-      /* Give the bottom div a green background */
       .fixed-bottom {
         background-color: green;
         bottom: 0;
       }
-
-      /* Style the main content div */
       .main-content {
         height: 70%;
-        background-color: yellow;
+        background-color: black;
         text-align: center;
-        color: black;
+        color: white;
         font-size: 2rem;
         display: flex;
         align-items: center;
         justify-content: center;
       }
+      .main-content .rectangle {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 100px;
+        background-color: red;
+        border-radius: 25px;
+        transition: transform 0.3s ease-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      .main-content .rectangle:hover {
+        transform: translate(-50%, -50%) scale(1.25);
+      }
     </style>
   </head>
   <body>
     <div class="fixed-top">FREE MONEY NO EFFORT</div>
-    <div class="main-content">Main Content</div>
+    <div class="main-content"><div class="rectangle">Clikc Me!</div></div>
     <div class="fixed-bottom">FREE MONEY</div>
     <script>
         let topDiv = document.querySelector('.fixed-top');
-        let middleDiv = document.querySelector('.main-content'); // Use main-content class name
+        let middleDiv = document.querySelector('.main-content');
         let bottomDiv = document.querySelector('.fixed-bottom');
         let colors = ['orange', 'red'];
         let colorIndex = parseInt(localStorage.getItem('colorIndex')) || 0;
 
         setInterval(function() {
             topDiv.style.backgroundColor = colors[colorIndex];
-            middleDiv.style.backgroundColor = colors[colorIndex];
             bottomDiv.style.backgroundColor = colors[colorIndex];
             colorIndex++;
         if (colorIndex >= colors.length) {
             colorIndex = 0;
         }
     localStorage.setItem('colorIndex', colorIndex);
-}, 500);
-        </script>
+    }, 250);
+    </script>
   </body>
 </html>
