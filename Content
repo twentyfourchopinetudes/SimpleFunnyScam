@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Page</title>
+    <title>notAScam</title>
     <style>
       #myDiv {
         position: fixed;
@@ -29,7 +29,7 @@
         animation: flash 0.5s infinite alternate;
         position: relative;
         top: 50%;
-        transform: translateY (-50%);
+        transform: translateY(-50%);
         
       }
       @keyframes flash {
@@ -58,7 +58,5 @@
     <div id="myDiv">
       <h1>CLICK HERE</h1>
     </div>
-  <body>
-    <!-- HTML goes here -->
   </body>
 </html>
