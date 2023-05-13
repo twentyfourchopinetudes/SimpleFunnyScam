@@ -10,7 +10,6 @@
         width: 100%;
         height: 12.5%;
         background-color: darkblue;
-        animation: pulse 2s infinite;
       }
       @keyframes pulse {
         0% {
@@ -27,13 +26,10 @@
         font-size: 5vw;
         color: orange;
         animation: flash 0.5s infinite alternate;
-        position: relative;
+        position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
       @keyframes flash {
         0% {
